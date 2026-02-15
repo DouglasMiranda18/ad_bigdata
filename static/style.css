@@ -1,0 +1,111 @@
+:root {
+  --olive: #606c38;
+  --olive-dark: #3b4a24;
+  --rose: #d989a3;
+  --rose-light: #f4dbe4;
+  --paper: #fffaf6;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(150deg, var(--paper), var(--rose-light));
+  color: #2d2d2d;
+}
+
+.container {
+  max-width: 820px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: white;
+  border-top: 8px solid var(--olive);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+}
+
+h1, h3 {
+  color: var(--olive-dark);
+}
+
+.highlight {
+  color: var(--rose);
+  font-weight: bold;
+}
+
+.form, .reserve-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+input, select, button {
+  padding: 0.65rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: var(--olive);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--olive-dark);
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.messages {
+  list-style: none;
+  padding: 0;
+}
+
+.messages li {
+  padding: 0.7rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.success {
+  background: #d9f2dd;
+}
+
+.error {
+  background: #f8d7da;
+}
+
+.gift-list {
+  list-style: none;
+  padding: 0;
+}
+
+.gift-item {
+  border: 1px solid #eee;
+  border-left: 6px solid var(--olive);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.gift-item.reserved {
+  border-left-color: #aaa;
+  opacity: 0.85;
+}
+
+.sold {
+  color: #c0392b;
+  font-weight: bold;
+}

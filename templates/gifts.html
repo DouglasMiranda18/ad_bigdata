@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Lista de presentes{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>Lista de Presentes</h1>
+  <p>Cada item pode ser comprado apenas uma vez.</p>
+  <a href="{{ url_for('invite') }}">← Voltar ao convite</a>
+
+  <ul class="gift-list">
+    {% for gift in gifts %}
+      <li class="gift-item {% if gift.reserved_by_name %}reserved{% endif %}">
+        <div>
+          <h3>{{ gift.name }}</h3>
+          <p>R$ {{ '%.2f'|format(gift.price_cents / 100) }}</p>
+          {% if gift.reserved_by_name %}
+            <p class="sold">Esgotado (reservado por {{ gift.reserved_by_name }})</p>
+          {% endif %}
+        </div>
+
+        {% if not gift.reserved_by_name %}
+          <form method="post" class="reserve-form">
+            <input type="hidden" name="gift_id" value="{{ gift.id }}" />
+            <select name="payment_method" required>
+              <option value="">Forma de pagamento</option>
+              <option value="pix">Pix</option>
+              <option value="cartao">Cartão (API futura)</option>
+            </select>
+            <button type="submit">Reservar</button>
+          </form>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

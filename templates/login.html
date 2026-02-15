@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Acesso ao convite{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>Convite de Casamento</h1>
+  <p>Área restrita para convidados.</p>
+  <form method="post" class="form">
+    <label for="name">Nome do convidado</label>
+    <input id="name" name="name" required />
+
+    <label for="password">Senha personalizada</label>
+    <input id="password" name="password" type="password" required />
+
+    <button type="submit">Entrar</button>
+  </form>
+</section>
+{% endblock %}
