@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Convite{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>{{ wedding.noiva }} & {{ wedding.noivo }}</h1>
+  <p class="highlight">Com alegria convidamos você para o nosso casamento!</p>
+  <ul>
+    <li><strong>Data:</strong> {{ wedding.data }}</li>
+    <li><strong>Igreja:</strong> {{ wedding.igreja }}</li>
+    <li><strong>Hora:</strong> {{ wedding.hora }}</li>
+  </ul>
+  <div class="actions">
+    <a href="{{ url_for('gifts_list') }}">Ver lista de presentes</a>
+    <a href="{{ url_for('logout') }}">Sair</a>
+  </div>
+</section>
+{% endblock %}
